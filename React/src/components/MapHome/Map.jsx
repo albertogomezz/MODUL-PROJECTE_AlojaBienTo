@@ -14,7 +14,7 @@ const Map = ({ apartments }) => {
       style={{
         height: "600px",
         width: "70%",
-        margin: "16% auto",
+        margin: "auto",
         borderRadius: "5px",
         boxShadow: "0px 0px 10px rgba(0, 0, 0, 0.3)",
       }}
