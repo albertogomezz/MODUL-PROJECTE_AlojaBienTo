@@ -32,6 +32,8 @@ class Apartment(models.Model):
     size = models.IntegerField()
     apartment_images = ArrayField(models.CharField(max_length=255, default=''), blank=True)
     zone = models.ForeignKey(Zone, on_delete=models.CASCADE, related_name='apartments')
+    lat = models.CharField(max_length=100)
+    lon = models.CharField(max_length=100)
     
     def __str__(self):
         return str(self.id)

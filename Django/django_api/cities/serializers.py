@@ -22,5 +22,5 @@ class ApartmentSerializer(serializers.ModelSerializer):
 
     class Meta:
         model = Apartment
-        fields = ('id','slug','name','location','price','rooms','bathrooms','size','apartment_images','zone')
+        fields = ('id','slug','name','location','price','rooms','bathrooms','size','apartment_images','zone','lat','lon')
         read_only_fields = ('id', 'slug')

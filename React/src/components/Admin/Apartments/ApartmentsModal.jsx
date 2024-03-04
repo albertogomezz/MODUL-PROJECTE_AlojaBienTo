@@ -11,6 +11,8 @@ function ApartmentsModal({ onAddApartment, show, handleClose, updatedApartment})
     const [size, setSize] = useState(updatedApartment ? updatedApartment.size : '');
     const [apartment_images, setApartment_images] = useState(updatedApartment ? updatedApartment.apartment_images : ['']);
     const [zone, setZone] = useState(updatedApartment ? updatedApartment.zone : '');
+    const [lat, setLat] = useState(updatedApartment ? updatedApartment.lat : '');
+    const [lon, setLon] = useState(updatedApartment ? updatedApartment.lon : '');
     const [isUpdate, setIsUpdate] = useState(false);
 
     useEffect(() => {
@@ -22,6 +24,8 @@ function ApartmentsModal({ onAddApartment, show, handleClose, updatedApartment})
             setSize(updatedApartment.size);
             setApartment_images(updatedApartment.apartment_images);
             setZone(updatedApartment.zone);
+            setLat(updatedApartment.lat);
+            setLon(updatedApartment.lon);
             setIsUpdate(true);
         }
     }, [updatedApartment]);
@@ -33,7 +37,9 @@ const resetData = () => {
     setBathrooms(''),
     setSize(''),
     setApartment_images(['']),
-    setZone('')
+    setZone(''),
+    setLat(''),
+    setLon('')
 }
 
 useEffect(() => {
@@ -45,6 +51,8 @@ useEffect(() => {
         setSize(updatedApartment.size);
         setApartment_images(updatedApartment.apartment_images);
         setZone(updatedApartment.zone);
+        setLat(updatedApartment.lat);
+        setLocation(updatedApartment.lon);
         setIsUpdate(true);
     } else {
         resetData();
@@ -57,9 +65,9 @@ const handleSubmit = (e) => {
     if(isUpdate === true){
         // console.log(location,price,rooms,bathrooms,size,apartment_images,zone);    
         // console.log("isUpdate");
-        onAddApartment({ location, price, rooms, bathrooms, size, apartment_images, zone }, updatedApartment.slug);
+        onAddApartment({ location, price, rooms, bathrooms, size, apartment_images, zone, lat, lon }, updatedApartment.slug);
     }else{
-        onAddApartment({ location, price, rooms, bathrooms, size, apartment_images, zone });
+        onAddApartment({ location, price, rooms, bathrooms, size, apartment_images, zone, lat, lon });
         resetData();
     }
 };
@@ -92,6 +100,13 @@ const handleApartmentZoneIDChange = (e) => {
     setZone(e.target.value);
 };
 
+const handleApartment_LatChange = (e) => {
+    setLat(e.target.value);
+};
+
+const handleApartment_LonChange = (e) => {
+    setLon(e.target.value);
+};
   return (
     <>
     <Modal show={show} onHide={handleClose}>
@@ -148,6 +163,22 @@ const handleApartmentZoneIDChange = (e) => {
                 <Form.Control
                     type="text" placeholder="ID of the Zone"
                     value={zone} onChange={handleApartmentZoneIDChange}
+                />
+            </Form.Group>
+            <Form.Group className="mb-3" controlId="exampleForm.ControlInput1">
+                <Form.Label>Latitud</Form.Label>
+                <Form.Control
+                    type="text" value={lat} onChange={handleApartment_LatChange}
+                    placeholder="latitud"
+                    autoFocus
+                />
+            </Form.Group>
+            <Form.Group className="mb-3" controlId="exampleForm.ControlInput1">
+                <Form.Label>Longitud</Form.Label>
+                <Form.Control
+                    type="text" value={lon} onChange={handleApartment_LonChange}
+                    placeholder="longitud"
+                    autoFocus
                 />
             </Form.Group>
         </Form>

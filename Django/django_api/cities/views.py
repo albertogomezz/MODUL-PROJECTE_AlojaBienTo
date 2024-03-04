@@ -188,6 +188,8 @@ class ApartmentView(viewsets.GenericViewSet):
             size = request.data['size']
             apartment_images = request.data['apartment_images']
             zone = request.data['zone']
+            lat = request.data['lat']
+            lon = request.data['lon']
 
             try:
                 zone_2 = Zone.objects.get(pk=zone)
@@ -199,7 +201,9 @@ class ApartmentView(viewsets.GenericViewSet):
                     bathrooms=bathrooms,
                     size=size,
                     apartment_images=apartment_images,
-                    zone=zone_2
+                    zone=zone_2,
+                    lat=lat,
+                    lon=lon
                 )
 
                 apartment_serializer = ApartmentSerializer(instance=apartment)

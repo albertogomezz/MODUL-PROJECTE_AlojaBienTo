@@ -57,8 +57,9 @@ export function ListApartments() {
               <th scope="col">Size</th>
               <th scope="col">Images</th>
               <th scope="col">Zone</th>
-              <th scope='col'>Delete</th>
-              <th scope='col'>Update</th>
+              <th scope='col'>Latitud</th>
+              <th scope='col'>Longitud</th>
+              <th scope='col'>Action</th>
             </tr>
           </thead>
           <tbody>
@@ -71,8 +72,10 @@ export function ListApartments() {
               <td>{apartment.size}</td>
               <td>{apartment.apartment_images}</td>
               <td>{apartment.zone}</td>
-              <td><button className="btn btn-danger" onClick={() => deleteApartment(apartment.slug)}>DELETE</button> </td>
-              <td><button className="btn btn-primary" onClick={() => updateApartment(apartment.slug) }>UPDATE</button></td>
+              <td>{apartment.lat}</td>
+              <td>{apartment.lon}</td>
+              <td><button className="btn btn-danger" onClick={() => deleteApartment(apartment.slug)}>DELETE</button>
+              <button className="btn btn-primary" onClick={() => updateApartment(apartment.slug) }>UPDATE</button> </td>
             </tr>
           ))}
           </tbody>

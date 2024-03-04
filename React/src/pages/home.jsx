@@ -1,4 +1,4 @@
-import React from 'react'
+import React,{ useEffect,useState } from 'react'
 // import ListCities from '../components/Client/Cities/ListCities'
 import HomeCSS from  './Home.module.css';
 import CardHomeCities from '../components/Home/card_home_cities';
@@ -7,8 +7,7 @@ import CitiesContext from "../context/CitiesContext";
 import ApartmentContext from "../context/ApartmentContext";
 import { useNavigate } from 'react-router-dom';
 import CardHomeApartments from '../components/Home/card_home_apartments';
-
-
+import Map from '../components/MapHome/Map';
 
 export default function Home() {
     const navigate = useNavigate();
@@ -69,7 +68,10 @@ export default function Home() {
                         <CardHomeApartments key={apartment.id} apartment={apartment} onClick={handleApartmentsClick} />
                       ))}
                     </div>
-                </div>          
+                </div>
+                <div>
+                  <Map apartments={apartments}></Map>
+                </div>       
             </div>
           );
 }
