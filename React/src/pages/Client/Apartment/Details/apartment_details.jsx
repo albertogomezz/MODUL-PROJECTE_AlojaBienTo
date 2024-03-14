@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useState, useRef } from 'react';
 import { useParams, useNavigate } from "react-router-dom";
 import { useApartments } from '../../../../hooks/useApartments';
 import { useZones } from '../../../../hooks/useZones';
@@ -8,9 +8,13 @@ import { useCities } from '../../../../hooks/useCities';
 import Carousel from 'react-bootstrap/Carousel';
 import apartmentdetails from './Apartment_details.module.css'
 import "react-datepicker/dist/react-datepicker.css";
+import emailjs from '@emailjs/browser';
+
 // import { ToastContainer, toast } from 'react-toastify';
 // import 'react-toastify/dist/ReactToastify.css';
 import DatePickerModal from '../../../../components/Client/Apartments/datepicker_modal';
+import ContactApartmentModal from '../../../../components/Client/Apartments/contact_apartment_modal';
+
 import { useReservation } from "../../../../hooks/useReservation";
 
 export default function Apartment_details() {
@@ -21,9 +25,14 @@ export default function Apartment_details() {
     const { useOneApartment, oneApartment } = useApartments();
     const { useOneZoneByApartment, oneZoneByApartment } = useZones();
     const { useOneCityByZone, oneCityByZone } = useCities();
+    //
     const [show, setShow] = useState(false);
     const handleClose = () => setShow(false);
     const handleShow = () => setShow(true);
+    //
+    const [show2, setShow2] = useState(false);
+    const handleClose2 = () => setShow2(false);
+    const handleShow2 = () => setShow2(true);
 
     useEffect(() => {
         useOneApartment(slug);
@@ -43,13 +52,56 @@ export default function Apartment_details() {
         }
         else {
             console.log("No estas logueado");
-            // toast("Wow so easy!");
-            // <ToastContainer />
             setTimeout(() => {
                 navigate('/login');
             }, 2000);
         }
     }
+
+    const ManageContact = () => {
+        if (isAuth) {
+            handleShow2();
+        }
+        else {
+            console.log("No estas logueado");
+            setTimeout(() => {
+                navigate('/login');
+            }, 2000);
+        }
+    }
+
+    const form = useRef();
+    const [submitted, setSubmitted] = useState(false);
+    
+    const user_name = user.username;
+    const apartment_street = oneApartment.location;
+
+    const sendEmail = (e) => {
+        e.preventDefault();
+            const question = e.target.question.value;
+    
+        const formData = {
+            user_name,
+            apartment_street,
+            question
+        };
+    
+        emailjs
+            .send('service_qdf1c4s', 'template_15bwl2n', formData, {
+                publicKey: 'BqrCx0AxXY1EKVvNx',
+            })
+            .then(
+                () => {
+                    console.log('SUCCESS!');
+                },
+                (error) => {
+                    console.log('FAILED...', error.text);
+                },
+            );
+    
+        e.target.reset();
+        setSubmitted(true);
+    };
 
     const emit_data = (dates) => {
         useReservationApartment({ f_ini: dates.formattedStart, f_end: dates.formattedEnd, apartment_id: oneApartment.id });
@@ -111,6 +163,12 @@ export default function Apartment_details() {
                             <div className={apartmentdetails.buttonContainer}>
                                 <button className="btn btn-primary" onClick={ManageReservation}>Reservar</button>
                                 <DatePickerModal show={show} handleClose={handleClose} onAddRevervation={emit_data} />
+                                <button className="btn btn-secondary" onClick={ManageContact}>Information</button>
+                                <ContactApartmentModal 
+                                    show2={show2} 
+                                    handleClose2={handleClose2} 
+                                    form={form} 
+                                    sendEmail={sendEmail}/>
                             </div>
                         </div>
                     </div>

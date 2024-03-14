@@ -27,7 +27,7 @@ export default function Home() {
     
     const sendEmail = (e) => {
       e.preventDefault();
-  
+      
       emailjs
         .sendForm('service_qdf1c4s', 'template_1tjedvk', form.current, {
           publicKey: 'BqrCx0AxXY1EKVvNx',

@@ -49,3 +49,7 @@ body {
   input, textarea {
     width: 100%;
   }
+
+  .modal-content-wrapper {
+    max-width: 100%;
+}
