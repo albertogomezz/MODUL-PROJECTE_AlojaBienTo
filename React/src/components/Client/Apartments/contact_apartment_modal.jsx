@@ -26,7 +26,7 @@ function ContactApartmentModal({show2, handleClose2, form, sendEmail}) {
             </Modal.Body>
             <Modal.Footer>
                 <Button variant="secondary" onClick={handleClose2}>
-                    Close
+                    Cerrar
                 </Button>
             </Modal.Footer>
         </Modal>

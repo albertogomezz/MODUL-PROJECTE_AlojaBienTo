@@ -163,7 +163,7 @@ export default function Apartment_details() {
                             <div className={apartmentdetails.buttonContainer}>
                                 <button className="btn btn-primary" onClick={ManageReservation}>Reservar</button>
                                 <DatePickerModal show={show} handleClose={handleClose} onAddRevervation={emit_data} />
-                                <button className="btn btn-secondary" onClick={ManageContact}>Information</button>
+                                <button className="btn btn-secondary" onClick={ManageContact}>Información</button>
                                 <ContactApartmentModal 
                                     show2={show2} 
                                     handleClose2={handleClose2} 
