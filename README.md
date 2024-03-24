@@ -1,4 +1,13 @@
+<div align="center">
+    <a href="#español">Español</a> |
+    <a href="#english">English</a>
+</div>
+
 # Reserva de Apartamentos - AlojaBienTo <img src="https://github.com/albertogomezz/MODUL-PROJECTE_AlojaBienTo/assets/128723669/74b207e4-1470-463d-9839-7498062f6085" alt="imagen" width="50">
+
+---
+
+## Español
 
 Este proyecto trata sobre una aplicación web diseñada para facilitar la reserva de apartamentos ubicados en varias ciudades. La aplicación permite a los usuarios explorar diferentes ciudades, ver las zonas dentro de esas ciudades y reservar apartamentos disponibles. Además, proporciona funcionalidades para administrar reservas e incidencias.
 
@@ -21,4 +30,39 @@ Este proyecto trata sobre una aplicación web diseñada para facilitar la reserv
 - **Base de Datos**: Se ha utilizado PostgreSQL como base de datos para almacenar la información del sistema.
 - **Librerías Adicionales**: Se han utilizado bibliotecas como SweetAlert y i18n para mejorar la experiencia del usuario y la internacionalización de la aplicación.
 
+## Notas Finales
+
+Este proyecto está diseñado para proporcionar una plataforma intuitiva y fácil de usar para la reserva de apartamentos. Esperamos que disfrutes usando la aplicación tanto como nosotros disfrutamos desarrollándola.
+
 ¡Gracias por utilizar nuestra aplicación de reserva de apartamentos!
+
+---
+
+## English
+
+This project is about a web application designed to facilitate the booking of apartments located in various cities. The application allows users to explore different cities, view the areas within those cities, and book available apartments. Additionally, it provides functionalities for managing bookings and incidents.
+
+## Key Features <img src="https://github.com/albertogomezz/MODUL-PROJECTE_AlojaBienTo/assets/128723669/2dae07a8-c395-4608-901b-2d83d5d016f0" alt="imagen" width="50">
+
+| Feature                                                    | Description                                                                                                                                                                                                                                               |
+|------------------------------------------------------------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| Exploration of Cities and Zones                             | Users can navigate through a list of available cities and explore the different areas within those cities to find available apartments.                                                                                                                |
+| Apartment Booking                                           | Users can view the details of a specific apartment and make a booking. They also have the option to cancel an existing booking if necessary.                                                                                                            |
+| Contact Form and Apartment Inquiry                          | Users can use a contact form to send general or specific inquiries about a particular apartment. However, logging in is required to use this functionality.                                                                                             |
+| Incident Management                                         | Users can report incidents related to their bookings, such as bathroom problems, issues with keys, etc. These incidents can be managed from the administration panel.                                                                                   |
+| Incident Notifications                                      | When the status of an incident changes, a notification is sent to the affected customer to inform them of the update.                                                                                                                                     |
+| User Profile                                                | Users have access to a profile where they can view their past and current bookings, as well as reported incidents. They can also filter incidents by viewed and non-viewed ones.                                                                      |
+| Administration Panel                                        | Administrators have access to administration panels where they can manage cities, areas, apartments, bookings, and incidents.                                                                                                                          |
+
+## Technologies Used
+
+- **Frontend**: The frontend is developed with React and uses Bootstrap for styles and responsive design.
+- **Backend**: The backend is built with Django, providing server logic and data management.
+- **Database**: PostgreSQL has been used as the database to store system information.
+- **Additional Libraries**: Libraries like SweetAlert and i18n have been used to enhance user experience and internationalization of the application.
+
+## Final Notes
+
+This project is designed to provide an intuitive and user-friendly platform for apartment booking. We hope you enjoy using the application as much as we enjoyed developing it.
+
+Thank you for using our apartment booking application!
