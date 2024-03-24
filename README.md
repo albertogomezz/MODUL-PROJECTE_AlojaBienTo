@@ -2,7 +2,7 @@
 
 Este proyecto trata sobre una aplicación web diseñada para facilitar la reserva de apartamentos ubicados en varias ciudades. La aplicación permite a los usuarios explorar diferentes ciudades, ver las zonas dentro de esas ciudades y reservar apartamentos disponibles. Además, proporciona funcionalidades para administrar reservas e incidencias.
 
-## Características Principales <img src="https://github.com/albertogomezz/MODUL-PROJECTE_AlojaBienTo/assets/128723669/9b3b6050-ea1c-4825-8a67-ad9810474fce" alt="imagen" width="50">
+## Características Principales <img src="[https://github.com/albertogomezz/MODUL-PROJECTE_AlojaBienTo/assets/128723669/6ab8501d-af5c-41ba-b867-87a10494879b]" alt="imagen" width="50">
 
 | Característica                                             | Descripción                                                                                                                                                                                                                                               |
 |------------------------------------------------------------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
