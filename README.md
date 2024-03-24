@@ -30,12 +30,6 @@ Este proyecto trata sobre una aplicación web diseñada para facilitar la reserv
 - **Base de Datos**: Se ha utilizado PostgreSQL como base de datos para almacenar la información del sistema.
 - **Librerías Adicionales**: Se han utilizado bibliotecas como SweetAlert y i18n para mejorar la experiencia del usuario y la internacionalización de la aplicación.
 
-## Notas Finales
-
-Este proyecto está diseñado para proporcionar una plataforma intuitiva y fácil de usar para la reserva de apartamentos. Esperamos que disfrutes usando la aplicación tanto como nosotros disfrutamos desarrollándola.
-
-¡Gracias por utilizar nuestra aplicación de reserva de apartamentos!
-
 ---
 
 ## English
@@ -61,8 +55,3 @@ This project is about a web application designed to facilitate the booking of ap
 - **Database**: PostgreSQL has been used as the database to store system information.
 - **Additional Libraries**: Libraries like SweetAlert and i18n have been used to enhance user experience and internationalization of the application.
 
-## Final Notes
-
-This project is designed to provide an intuitive and user-friendly platform for apartment booking. We hope you enjoy using the application as much as we enjoyed developing it.
-
-Thank you for using our apartment booking application!
