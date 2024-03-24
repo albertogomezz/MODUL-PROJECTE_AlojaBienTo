@@ -1,8 +1,8 @@
-# Reserva de Apartamentos - AlojaBienTo
+# Reserva de Apartamentos - AlojaBienTo ![image](https://github.com/albertogomezz/MODUL-PROJECTE_AlojaBienTo/assets/128723669/74b207e4-1470-463d-9839-7498062f6085)
 
 Este proyecto trata sobre una aplicación web diseñada para facilitar la reserva de apartamentos ubicados en varias ciudades. La aplicación permite a los usuarios explorar diferentes ciudades, ver las zonas dentro de esas ciudades y reservar apartamentos disponibles. Además, proporciona funcionalidades para administrar reservas e incidencias.
 
-## Características Principales
+## Características Principales ![image](https://github.com/albertogomezz/MODUL-PROJECTE_AlojaBienTo/assets/128723669/71bf700d-9ef3-4fac-98aa-5c372cf731e9)
 
 | Característica                                             | Descripción                                                                                                                                                                                                                                               |
 |------------------------------------------------------------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
