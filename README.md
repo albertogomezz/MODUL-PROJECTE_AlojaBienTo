@@ -4,19 +4,15 @@ Este proyecto trata sobre una aplicación web diseñada para facilitar la reserv
 
 ## Características Principales
 
-1. **Exploración de Ciudades y Zonas**: Los usuarios pueden navegar a través de una lista de ciudades disponibles y explorar las distintas zonas dentro de esas ciudades para encontrar apartamentos disponibles.
-
-2. **Reserva de Apartamentos**: Los usuarios pueden ver los detalles de un apartamento específico y realizar una reserva. También tienen la opción de anular una reserva existente si es necesario.
-
-3. **Formulario de Contacto y Consulta de Apartamentos**: Los usuarios pueden utilizar un formulario de contacto para enviar consultas generales o específicas sobre un apartamento en particular. Sin embargo, se requiere inicio de sesión para utilizar esta funcionalidad.
-
-4. **Gestión de Incidencias**: Los usuarios pueden reportar incidencias relacionadas con sus reservas, como problemas en el baño, con las llaves, etc. Estas incidencias se pueden gestionar desde el panel de administración.
-
-5. **Notificaciones de Incidencias**: Cuando el estado de una incidencia cambia, se envía una notificación al cliente afectado para informarle sobre la actualización.
-
-6. **Perfil de Usuario**: Los usuarios tienen acceso a un perfil donde pueden ver sus reservas pasadas y actuales, así como las incidencias reportadas. También pueden filtrar las incidencias por vistas y no vistas.
-
-7. **Panel de Administración**: Los administradores tienen acceso a paneles de administración donde pueden gestionar ciudades, zonas, apartamentos, reservas e incidencias.
+| Característica                                             | Descripción                                                                                                                                                                                                                                               |
+|------------------------------------------------------------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| Exploración de Ciudades y Zonas                             | Los usuarios pueden navegar a través de una lista de ciudades disponibles y explorar las distintas zonas dentro de esas ciudades para encontrar apartamentos disponibles.                                                                              |
+| Reserva de Apartamentos                                     | Los usuarios pueden ver los detalles de un apartamento específico y realizar una reserva. También tienen la opción de anular una reserva existente si es necesario.                                                                                    |
+| Formulario de Contacto y Consulta de Apartamentos           | Los usuarios pueden utilizar un formulario de contacto para enviar consultas generales o específicas sobre un apartamento en particular. Sin embargo, se requiere inicio de sesión para utilizar esta funcionalidad.                                   |
+| Gestión de Incidencias                                      | Los usuarios pueden reportar incidencias relacionadas con sus reservas, como problemas en el baño, con las llaves, etc. Estas incidencias se pueden gestionar desde el panel de administración.                                                             |
+| Notificaciones de Incidencias                               | Cuando el estado de una incidencia cambia, se envía una notificación al cliente afectado para informarle sobre la actualización.                                                                                                                        |
+| Perfil de Usuario                                           | Los usuarios tienen acceso a un perfil donde pueden ver sus reservas pasadas y actuales, así como las incidencias reportadas. También pueden filtrar las incidencias por vistas y no vistas.                                                         |
+| Panel de Administración                                     | Los administradores tienen acceso a paneles de administración donde pueden gestionar ciudades, zonas, apartamentos, reservas e incidencias.                                                                                                             |
 
 ## Tecnologías Utilizadas
 
