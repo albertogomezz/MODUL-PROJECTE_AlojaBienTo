@@ -21,8 +21,4 @@ Este proyecto trata sobre una aplicación web diseñada para facilitar la reserv
 - **Base de Datos**: Se ha utilizado PostgreSQL como base de datos para almacenar la información del sistema.
 - **Librerías Adicionales**: Se han utilizado bibliotecas como SweetAlert y i18n para mejorar la experiencia del usuario y la internacionalización de la aplicación.
 
-## Notas Finales
-
-Este proyecto está diseñado para proporcionar una plataforma intuitiva y fácil de usar para la reserva de apartamentos. Esperamos que disfrutes usando la aplicación tanto como nosotros disfrutamos desarrollándola.
-
 ¡Gracias por utilizar nuestra aplicación de reserva de apartamentos!
