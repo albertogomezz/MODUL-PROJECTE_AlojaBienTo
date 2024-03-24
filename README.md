@@ -1,4 +1,4 @@
-# Reserva de Apartamentos - Documentación del Proyecto
+# Reserva de Apartamentos - AlojaBienTo
 
 Este proyecto trata sobre una aplicación web diseñada para facilitar la reserva de apartamentos ubicados en varias ciudades. La aplicación permite a los usuarios explorar diferentes ciudades, ver las zonas dentro de esas ciudades y reservar apartamentos disponibles. Además, proporciona funcionalidades para administrar reservas e incidencias.
 
