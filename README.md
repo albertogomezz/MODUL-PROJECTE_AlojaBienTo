@@ -18,6 +18,7 @@ Este proyecto trata sobre una aplicación web diseñada para facilitar la reserv
 
 - **Frontend**: El frontend está desarrollado con React y utiliza Bootstrap para estilos y diseño responsivo.
 - **Backend**: El backend está construido con Django, proporcionando la lógica del servidor y la gestión de datos.
+- **Base de Datos**: Se ha utilizado PostgreSQL como base de datos para almacenar la información del sistema.
 - **Librerías Adicionales**: Se han utilizado bibliotecas como SweetAlert y i18n para mejorar la experiencia del usuario y la internacionalización de la aplicación.
 
 ## Notas Finales
