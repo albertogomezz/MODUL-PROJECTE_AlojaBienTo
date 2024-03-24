@@ -34,6 +34,15 @@ export default function ListApartments({ AllApartments }) {
               <CardHomeApartments key={apartment.id} apartment={apartment} onClick={handleCityClick}/>
             ))}
         </div>
+        <br></br>
+        <br></br>
+        <br></br>
+        <br></br>
+        <br></br>
+        <br></br>
+        <br></br>
+        <br></br>
+        <br></br>
       </>
     );
 };

@@ -9,15 +9,14 @@ import Carousel from 'react-bootstrap/Carousel';
 import apartmentdetails from './Apartment_details.module.css'
 import "react-datepicker/dist/react-datepicker.css";
 import emailjs from '@emailjs/browser';
-
-// import { ToastContainer, toast } from 'react-toastify';
-// import 'react-toastify/dist/ReactToastify.css';
 import DatePickerModal from '../../../../components/Client/Apartments/datepicker_modal';
 import ContactApartmentModal from '../../../../components/Client/Apartments/contact_apartment_modal';
-
 import { useReservation } from "../../../../hooks/useReservation";
+import Swal from 'sweetalert2'
+import { useTranslation } from "react-i18next";
 
 export default function Apartment_details() {
+    const { t } = useTranslation();
     const { user, isAuth } = useContext(AuthContext);
     const { isCorrect, useReservationApartment } = useReservation();
     const navigate = useNavigate();
@@ -51,10 +50,16 @@ export default function Apartment_details() {
             handleShow();
         }
         else {
-            console.log("No estas logueado");
             setTimeout(() => {
                 navigate('/login');
             }, 2000);
+            Swal.fire({
+                position: "top-end",
+                icon: "info",
+                title: `${t('alerts.reserve')}`,
+                showConfirmButton: false,
+                timer: 2000
+            });
         }
     }
 
@@ -63,10 +68,16 @@ export default function Apartment_details() {
             handleShow2();
         }
         else {
-            console.log("No estas logueado");
             setTimeout(() => {
                 navigate('/login');
             }, 2000);
+            Swal.fire({
+                position: "top-end",
+                icon: "info",
+                title: `${t('alerts.askInfo')}`,
+                showConfirmButton: false,
+                timer: 2000
+            });
         }
     }
 
@@ -127,43 +138,43 @@ export default function Apartment_details() {
                     </div>
                     <div className="col-md-6">
                         <div className={apartmentdetails.apartmentInfo}>
-                            <h2>Información del Apartamento</h2>
+                            <h2>{t('apartmentDetails.title')}</h2>
                             <table className="table">
                                 <tbody>
                                     <tr>
-                                        <th>Localización :</th>
+                                        <th>{t('apartmentDetails.location')}</th>
                                         <td>{oneApartment.location}</td>
                                     </tr>
                                     <tr>
-                                        <th>Precio :</th>
+                                        <th>{t('apartmentDetails.price')}</th>
                                         <td>{oneApartment.price}</td>
                                     </tr>
                                     <tr>
-                                        <th>M² :</th>
+                                        <th>m² :</th>
                                         <td>{oneApartment.size}</td>
                                     </tr>
                                     <tr>
-                                        <th>Provincia :</th>
+                                        <th>{t('apartmentDetails.province')}</th>
                                         <td>{oneCityByZone.state}</td>
                                     </tr>
                                     <tr>
-                                        <th>Zona :</th>
+                                        <th>{t('apartmentDetails.zone')}</th>
                                         <td>{oneZoneByApartment.name} ( {oneCityByZone.name} )</td>
                                     </tr>
                                     <tr>
-                                        <th>Número de baños :</th>
+                                        <th>{t('apartmentDetails.nBath')}</th>
                                         <td>{oneApartment.bathrooms}</td>
                                     </tr>
                                     <tr>
-                                        <th>Número de habitaciones :</th>
+                                        <th>{t('apartmentDetails.nRoom')}</th>
                                         <td>{oneApartment.rooms}</td>
                                     </tr>
                                 </tbody>
                             </table>
                             <div className={apartmentdetails.buttonContainer}>
-                                <button className="btn btn-primary" onClick={ManageReservation}>Reservar</button>
+                                <button className="btn btn-primary" onClick={ManageReservation}>{t('apartmentDetails.buttonR')}</button>
                                 <DatePickerModal show={show} handleClose={handleClose} onAddRevervation={emit_data} />
-                                <button className="btn btn-secondary" onClick={ManageContact}>Información</button>
+                                <button className="btn btn-secondary" onClick={ManageContact}>{t('apartmentDetails.buttonI')}</button>
                                 <ContactApartmentModal 
                                     show2={show2} 
                                     handleClose2={handleClose2} 
@@ -174,6 +185,16 @@ export default function Apartment_details() {
                     </div>
                 </div>
             </div>
+            <br></br>            
+            <br></br>
+            <br></br>
+            <br></br>
+            <br></br>
+            <br></br>
+            <br></br>
+            <br></br>
+            <br></br>
+            <br></br>
         </>
     )
 }

@@ -20,6 +20,7 @@ export default function ListCities({ AllCities }) {
           <CardCities key={city.id} city={city} onClick={handleCityClick}/>
         ))}
       </div>
+      <br></br><br></br><br></br>
     </div>
   );
 };

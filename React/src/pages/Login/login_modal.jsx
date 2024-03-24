@@ -3,8 +3,11 @@ import Button from 'react-bootstrap/Button';
 import Form from 'react-bootstrap/Form';
 import Modal from 'react-bootstrap/Modal';
 import { useNavigate } from "react-router-dom";
+import { useTranslation } from "react-i18next";
 
 function LoginModal({show, handleClose, onAddUser, onLoginUser}){
+
+    const { t } = useTranslation();
     const [username, setUsername] = useState('');
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
@@ -54,34 +57,34 @@ function LoginModal({show, handleClose, onAddUser, onLoginUser}){
         keyboard={false}>
         <Modal.Header closeButton>
         {form_type === 'login' && (
-          <Modal.Title>Log In</Modal.Title>
+          <Modal.Title>{t('modals.login.titleL')}</Modal.Title>
         )}
         {form_type === 'register' && (
-          <Modal.Title>Register</Modal.Title>
+          <Modal.Title>{t('modals.login.titleR')}</Modal.Title>
         )}
         </Modal.Header>
         <Modal.Body>
           <Form>
             {form_type === 'login' && (
               <Form.Group className="mb-3" controlId="login">
-                <Form.Label>Username</Form.Label>
+                <Form.Label>{t('modals.login.username')}</Form.Label>
                 <Form.Control  value={username}  type="text" placeholder='' onChange={handleUsernameNameChange}
                 autoFocus />
 
-                <Form.Label>Password</Form.Label>
+                <Form.Label>{t('modals.login.password')}</Form.Label>
                 <Form.Control value={password} type="password" placeholder='' onChange={handlePasswordChange}/>
 
               </Form.Group>
             )}
             {form_type === 'register' && (
               <Form.Group className="mb-3" controlId="register">
-                <Form.Label>Username</Form.Label>
+                <Form.Label>{t('modals.login.username')}</Form.Label>
                   <Form.Control value={username} type="text"  onChange={handleUsernameNameChange}/>
                 
-                <Form.Label>Email</Form.Label>
+                <Form.Label>{t('modals.login.email')}</Form.Label>
                   <Form.Control value={email} type="email" onChange={handleEmailChange} />
                 
-                <Form.Label>Password</Form.Label>
+                <Form.Label>{t('modals.login.password')}</Form.Label>
                   <Form.Control value={password} type="password" onChange={handlePasswordChange} />
               </Form.Group>
             )}
@@ -89,20 +92,20 @@ function LoginModal({show, handleClose, onAddUser, onLoginUser}){
         </Modal.Body>
       <Modal.Footer>
       {form_type === 'login' && (
-        <a onClick={handleRedirect} className='mb-3'>I do not have an account</a>
+        <a onClick={handleRedirect} className='mb-3'>{t('modals.login.changeRegister')}</a>
       )}
       {form_type === 'register' && (
-        <a onClick={handleRedirect} className='mb-3'>Already have an account?</a>
+        <a onClick={handleRedirect} className='mb-3'>{t('modals.login.changeLogin')}</a>
       )}
         <Button variant="secondary" onClick={handleClose}>
-          Close
+          {t('modals.login.close')}
         </Button>
         <Button variant="primary" onClick={handleSubmit}>
           {form_type === 'login' && (
-            <span>Log In</span>
+            <span>{t('modals.login.logIn')}</span>
           )}
           {form_type === 'register' && (
-            <span>Register</span>
+            <span>{t('modals.login.register')}</span>
           )}
         </Button>
       </Modal.Footer>

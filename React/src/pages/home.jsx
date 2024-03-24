@@ -8,14 +8,19 @@ import ApartmentContext from "../context/ApartmentContext";
 import { useNavigate } from 'react-router-dom';
 import CardHomeApartments from '../components/Home/card_home_apartments';
 import Map from '../components/MapHome/Map';
+import Swal from 'sweetalert2'
+
+import { useTranslation } from "react-i18next";
 
 export default function Home() {
+
+    const { t, i18n } = useTranslation();
     const navigate = useNavigate();
     const { cities, setCities } = useContext(CitiesContext);
     const { apartments, setApartments } = useContext(ApartmentContext);
 
     const handleCityClick = (slug_city) => {
-        navigate('/zones/' + slug_city)
+      navigate('/zones/' + slug_city)
     };
 
     const handleApartmentsClick = (slug_apartment) => {
@@ -34,13 +39,19 @@ export default function Home() {
         })
         .then(
           () => {
+            Swal.fire({
+              position: "top-end",
+              icon: "success",
+              title: `¡Su mensaje ha sido enviado!`,
+              showConfirmButton: false,
+              timer: 3000
+            });
             console.log('SUCCESS!');
           },
           (error) => {
             console.log('FAILED...', error.text);
           },
         );
-
         form.current.reset();
         setSubmitted(true);
     };
@@ -55,12 +66,10 @@ export default function Home() {
                   </h1>
                 </div>
               </header>
-        
               <div className="w3-content w3-padding" style={{ maxWidth: '1564px' }}>
-
                 <div className="w3-row-padding">
                   <div className="w3-container w3-padding-32" id="projects">
-                      <h3 className="w3-border-bottom w3-border-light-grey w3-padding-16">Nuestras Mejores Ciudades</h3>
+                      <h3 className="w3-border-bottom w3-border-light-grey w3-padding-16">{t('home.titleCities')}</h3>
                   </div>
                   <div className="w3-row-padding">
                   {cities.map((city, index) => (
@@ -70,15 +79,9 @@ export default function Home() {
                 </div>
 
                 <div className="w3-container w3-padding-32" id="about">
-                  <h3 className="w3-border-bottom w3-border-light-grey w3-padding-16">Variedad de Lugares</h3>
+                  <h3 className="w3-border-bottom w3-border-light-grey w3-padding-16">{t('home.titleApartments')}</h3>
                   <p>
-                  Somos una empresa especializada en ofrecer una amplia gama de apartamentos en diferentes ubicaciones de España. 
-                  Desde las bulliciosas calles de Barcelona hasta los encantadores pueblos costeros de Andalucía, nuestra variedad de 
-                  apartamentos brinda opciones para satisfacer todas las necesidades y preferencias. 
-                  Con un enfoque en la comodidad, la calidad y la accesibilidad, nos esforzamos por proporcionar a nuestros clientes 
-                  experiencias únicas y memorables en cada estancia. Ya sea que estés planeando unas vacaciones familiares, 
-                  un viaje de negocios o una escapada romántica, estamos aquí para ayudarte a encontrar el alojamiento 
-                  perfecto para tu próxima aventura en España.
+                  {t('home.textApartments')}
                   </p>
                 </div>
                 <div className="w3-row-padding">
@@ -86,10 +89,9 @@ export default function Home() {
                     <CardHomeApartments key={apartment.id} apartment={apartment} onClick={handleApartmentsClick} />
                   ))}
                 </div>
-
                 <div className="w3-row-padding">
                   <div className="w3-container w3-padding-32" id="projects">
-                      <h3 className="w3-border-bottom w3-border-light-grey w3-padding-16">Donde encontrar apartamentos</h3>
+                      <h3 className="w3-border-bottom w3-border-light-grey w3-padding-16">{t('home.mapBox.titleMap')}</h3>
                   </div>
                   <div className="w3-row-padding">
                     <Map apartments={apartments}></Map>
@@ -101,21 +103,21 @@ export default function Home() {
                   </div>
                   <div>
                     <div className={HomeCSS.formbox}>
-                    <h1>Contacta Con Nosotros</h1>
+                    <h1>{t('home.contact.title')}</h1>
                         <form ref={form} onSubmit={sendEmail}>
                             <div className="form-group">
-                                <label htmlFor="name">Nombre</label>
+                                <label htmlFor="name">{t('home.contact.name')}</label>
                                 <input className="form-control" id="name" type="text" name="user_name" />
                             </div>
                             <div className="form-group">
-                                <label htmlFor="email">Email</label>
+                                <label htmlFor="email">{t('home.contact.email')}</label>
                                 <input className="form-control" id="email" type="email" name="user_email" />
                             </div>
                             <div className="form-group">
-                                <label htmlFor="message">Mensaje</label>
+                                <label htmlFor="message">{t('home.contact.message')}</label>
                                 <textarea className="form-control" id="message" name="message"></textarea>
                             </div>
-                            <input className="btn btn-primary" type="submit" value="Enviar" />
+                            <input className="btn btn-primary" type="submit" value={t('home.contact.buttonSend')} />
                         </form>
                     </div>
                 </div>

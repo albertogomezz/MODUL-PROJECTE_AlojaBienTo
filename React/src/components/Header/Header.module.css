@@ -7,3 +7,27 @@
     width: 100%;
     z-index: 1000;
 }
+
+.flag {
+    width: 30px;
+    height: 20px;
+    margin-right: 5px;
+}
+
+.flag_option {
+    padding-left: 30px; /* Espacio para la imagen de la bandera */
+    background-repeat: no-repeat;
+    background-position: 5px center; /* Posición de la imagen de la bandera */
+}
+
+.flag_option.english {
+    background-image: url('../../assets/country_imgs/reino-unido.png');
+}
+
+.flag_option.spanish {
+    background-image: url('../../assets/country_imgs/espana.png');
+}
+
+.flag_option.french {
+    background-image: url('../../assets/country_imgs/francia.png');
+}

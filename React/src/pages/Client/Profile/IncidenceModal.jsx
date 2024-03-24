@@ -3,8 +3,11 @@ import Button from 'react-bootstrap/Button';
 import Form from 'react-bootstrap/Form';
 import Modal from 'react-bootstrap/Modal';
 import { useIncidence } from '../../../hooks/useIncidence'
+import { useTranslation } from "react-i18next";
+import Swal from 'sweetalert2'
 
 function ExampleModal({ show, handleClose, id_apartment }) {
+    const { t } = useTranslation();
     const [selectedOption, setSelectedOption] = useState('');
     const [description, setDescription] = useState('');
     const { useCreateIncidence } = useIncidence();
@@ -26,37 +29,44 @@ function ExampleModal({ show, handleClose, id_apartment }) {
         };
         useCreateIncidence(incidenceData);
         handleClose();
+        Swal.fire({
+            position: "top-end",
+            icon: "success",
+            title: `${t('alerts.incidence')}`,
+            showConfirmButton: false,
+            timer: 2000
+        });
+
     };
 
     return (
         <Modal show={show} onHide={handleClose}>
             <Modal.Header closeButton>
-                <Modal.Title>Report Incidence</Modal.Title>
+                <Modal.Title>{t('modals.incidence.title')}</Modal.Title>
             </Modal.Header>
             <Modal.Body>
                 <Form>
                     <Form.Group controlId="exampleForm.ControlSelect1">
-                        <Form.Label>Incidence Type</Form.Label>
+                        <Form.Label>{t('modals.incidence.type')}</Form.Label>
                         <Form.Control as="select" onChange={handleSelectChange}>
-                            <option value="Baño">Baño</option>
-                            <option value="Cocina">Cocina</option>
-                            <option value="Sala de estar">Sala de estar</option>
-                            <option value="Llaves">Llaves</option>
-                            <option value="Calefacción">Calefacción</option>
+                            <option value="Bathroom">{t('modals.incidence.optionBath')}</option>
+                            <option value="Kitchen">{t('modals.incidence.optionKitchen')}</option>
+                            <option value="Keys">{t('modals.incidence.optionKeys')}</option>
+                            <option value="Heating">{t('modals.incidence.optionHeating')}</option>
                         </Form.Control>
                     </Form.Group>
                     <Form.Group controlId="exampleForm.ControlTextarea1">
-                        <Form.Label>Description</Form.Label>
+                        <Form.Label>{t('modals.incidence.desc')}</Form.Label>
                         <Form.Control as="textarea" rows={3} onChange={handleDescriptionChange} />
                     </Form.Group>
                 </Form>
             </Modal.Body>
             <Modal.Footer>
                 <Button variant="secondary" onClick={handleClose}>
-                    Cancelar
+                {t('modals.incidence.buttonClose')}
                 </Button>
                 <Button variant="primary" onClick={handleSubmit}>
-                    Enviar
+                {t('modals.incidence.buttonSend')}
                 </Button>
             </Modal.Footer>
         </Modal>

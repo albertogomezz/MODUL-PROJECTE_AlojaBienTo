@@ -1,11 +1,13 @@
 import React, { useEffect, useState } from "react";
-// import SignUpForm from "../../components/Client/Login/SignUpForm";
 import { useAuth } from "../../hooks/useAuth";
 import { useNavigate } from "react-router-dom";
 import LoginModal from "./login_modal";
 import LoginCSS from "./login.module.css"
+import Swal from 'sweetalert2'
+import { useTranslation } from "react-i18next";
 
 const Login = () => {
+    const { t } = useTranslation();
     const { isCorrect, useRegister, useLogin } = useAuth();
     const handleClose = () => setShow(false);
     const [id, setId] = useState(null);
@@ -19,22 +21,21 @@ const Login = () => {
         }
     }, [isCorrect, navigate]);
 
-    useEffect(() => {
-    // setShow(true);
-    // console.log(show);
-    }, []);
-
-
     const emit_register = (userData) => {
-        // console.log(userData.username, userData.email, userData.password);
         useRegister(userData);
     }
 
     const emit_login = (userdata) => {
-            // console.log(userdata.username, userdata.password);
             useLogin(userdata);
+            const username = userdata.username;
+            Swal.fire({
+                position: "top-end",
+                icon: "success",
+                title: `${username} ${t('alerts.login')}`,
+                showConfirmButton: false,
+                timer: 3500
+            });
     }
-
     return (
         <>
             <div className={LoginCSS.background}>

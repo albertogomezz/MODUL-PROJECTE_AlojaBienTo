@@ -12,8 +12,10 @@ import IncidenceModal from './IncidenceModal';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faThumbsUp } from '@fortawesome/free-solid-svg-icons';
 import { faPersonRunning } from '@fortawesome/free-solid-svg-icons';
+import { useTranslation } from "react-i18next";
 
 export default function Profile() {
+    const { t } = useTranslation();
     const id = useParams();
     const [type_list, setTypeList] = useState(0);
     const { useReservationByUser, reservations, useDeleteReservation } = useReservation();
@@ -93,7 +95,7 @@ export default function Profile() {
 
                         <div className={ProfileCSS.profileusersettings}>
                             <h1 className={ProfileCSS.profileusername}>
-                                Welcome back <span className={ProfileCSS.profileusername2}>{profile.name}</span>!
+                                {t('profile.title')} <span className={ProfileCSS.profileusername2}>{profile.name}</span>
                             </h1>
                             <br/>
                             <div className={ProfileCSS.profileemail}>{user.email}</div>
@@ -103,13 +105,13 @@ export default function Profile() {
                         <div className={ProfileCSS.profilestats}>
                             <ul>
                                 <li onClick={() => handleItemClick('Reservation')}>
-                                    <span className={ProfileCSS.profilestatcount}></span> Reservation
+                                    <span className={ProfileCSS.profilestatcount}></span> {t('profile.reservations')}
                                 </li>
                                 <li onClick={() => handleItemClick('Seen Notification')}>
-                                    <span className={ProfileCSS.profilestatcount}></span> Seen Notifications
+                                    <span className={ProfileCSS.profilestatcount}></span> {t('profile.seen')}
                                 </li>
                                 <li onClick={() => handleItemClick('Not Seen Notification')}>
-                                    <span className={ProfileCSS.profilestatcount}></span> Not seen Notifications
+                                    <span className={ProfileCSS.profilestatcount}></span> {t('profile.notSeen')}
                                 </li>
                             </ul>
                         </div>
@@ -118,22 +120,22 @@ export default function Profile() {
                         {type_list === 0 && reservations.map((reservation, index) => (
                             <div key={index} className={ProfileCSS.card}>
                                 <div className={ProfileCSS.cardinfo}>
-                                    <h2>Reservation of apartment {reservation.apartment_id}</h2>
-                                    <p>Check-in date: {reservation.f_ini}</p>
-                                    <p>Check-out date: {reservation.f_end}</p>                                
+                                    <h2>{t('profile.titleCard')} {reservation.apartment_id}</h2>
+                                    <p>{t('profile.checkIn')} {reservation.f_ini}</p>
+                                    <p>{t('profile.checkOut')} {reservation.f_end}</p>                                
                                     <div className={ProfileCSS.buttons}>
                                         <button 
                                             className={ProfileCSS.incidencebutton}
                                             onClick={() => handleButtonClick(reservation.apartment_id)}
                                         >
-                                            Incidence
+                                            {t('profile.incidenceButton')}
                                         </button>
                                         <IncidenceModal show={showModal} handleClose={handleCloseModal} id_apartment={reservation.apartment_id} />
                                         <button 
                                             className={ProfileCSS.deletebutton} 
                                             onClick={() => handleclickdelete(reservation.id)}
                                         >
-                                            Cancel
+                                            {t('profile.cancelButton')}
                                         </button>
                                     </div>
                                 </div>
@@ -157,7 +159,7 @@ export default function Profile() {
                                             className={ProfileCSS.delete_notif} 
                                             onClick={() => handleDeleteNotification(notification.id)}
                                         >
-                                            Delete
+                                            {t('profile.deleteButton')}
                                         </button>
                                     </div>
                                 </div>
@@ -171,18 +173,18 @@ export default function Profile() {
                                         {notification.desc.includes("resolved") ? (
                                             <div style={{ marginLeft: '20px' , marginTop: '20px' }}>
                                                 <FontAwesomeIcon icon={faThumbsUp} size="4x" />
-                                            </div>                                    
+                                            </div>                                   
                                     ) : notification.desc.includes("in progress") ? (
                                             <div style={{ marginLeft: '20px' , marginTop: '20px' }}>
                                                 <FontAwesomeIcon icon={faPersonRunning} size="4x" />
                                             </div>
-                                    ) : null}                       
+                                    ) : null}                     
                                     <div className={ProfileCSS.buttons}>
                                         <button
                                             className={ProfileCSS.delete_notif} 
                                             onClick={() => handleSetSeenNotification(notification.id)}
                                         >
-                                            Mark as Seen
+                                            {t('profile.markAsSeenButton')}
                                         </button>
                                     </div>
                                 </div>
@@ -190,6 +192,7 @@ export default function Profile() {
                         ))}
                     </div>
                 </div>
+                <br></br>
             </header>
         </div>
     );

@@ -3,8 +3,10 @@ import { MapContainer, TileLayer, Marker, Popup } from "react-leaflet";
 import "leaflet/dist/leaflet.css";
 import Button from 'react-bootstrap/Button';
 import { useNavigate } from "react-router-dom";
+import { useTranslation } from "react-i18next";
 
 const Map = ({ apartments }) => {
+  const { t } = useTranslation();
   const navigate = useNavigate();
  
   return (
@@ -29,14 +31,14 @@ const Map = ({ apartments }) => {
         <Marker key={apartment.id} position={[apartment.lat, apartment.lon]}>
           <Popup>
             <h5>
-              <b>Apartment</b>
+              <b>{t('home.mapBox.titleApartment')}</b>
             </h5>
             <p>
-              Street: <b>{apartment.location}</b>
+              {t('home.mapBox.street')} <b>{apartment.location}</b>
             </p>
             <img src={apartment.apartment_images[0]} alt="Apartment" style={{ maxWidth: "100%" }} />
             <div style={{ marginTop: "10px" }}>
-              <Button onClick={() => navigate(`/apartment_details/${apartment.slug}`)}>View Details</Button>
+              <Button onClick={() => navigate(`/apartment_details/${apartment.slug}`)}>{t('home.mapBox.buttonDetails')}</Button>
             </div>
           </Popup>
         </Marker>

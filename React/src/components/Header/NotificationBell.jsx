@@ -10,11 +10,12 @@ import AuthContext from '../../context/AuthContext';
 import OverlayTrigger from 'react-bootstrap/OverlayTrigger';
 import Popover from 'react-bootstrap/Popover';
 import Tooltip from 'react-bootstrap/Tooltip';
-import Button from 'react-bootstrap/Button';
+import { useTranslation } from "react-i18next";
+
 
 const NotificationBell = () => {
+    const { t } = useTranslation();
     const { notSeenNotifications, countNotSeenNotifications, useNotSeenNotifications, useSetSeenNotifications, useCountNotSeenNotifications } = useNotifications();
-
     const { user } = useContext(AuthContext);
     const [show, setShow] = useState(false);
     const navigate = useNavigate();
@@ -52,7 +53,7 @@ const NotificationBell = () => {
                 placement={'bottom'}
                 overlay={
                     <Popover id={`popover-positioned-bottom`}>
-                        <Popover.Header as="h3">New Notifications<span className={NotificationBellCSS.count2}>{countNotSeenNotifications}</span></Popover.Header>
+                        <Popover.Header as="h3">{t('home.notificationBell.title')}<span className={NotificationBellCSS.count2}>{countNotSeenNotifications}</span></Popover.Header>
                         {notSeenNotifications.length > 0 && notSeenNotifications.map((notification, index) => (
                             <Popover.Body key={index} className={NotificationBellCSS.notification_body}>
                                 <strong>{notification.desc}</strong>
@@ -60,14 +61,14 @@ const NotificationBell = () => {
                                 <OverlayTrigger key={'left'} placement={'left'}
                                     overlay={
                                         <Tooltip id='tooltip-button'>
-                                            Mark as seen
+                                            {t('home.notificationBell.markaAsSeen')}
                                         </Tooltip>
                                     }>
                                     <button onClick={() => handleSetSeenNotification(notification.id)} className={NotificationBellCSS.checkbutton}><FontAwesomeIcon icon={faCheck} /></button>
                                 </OverlayTrigger>
-                                <small className={NotificationBellCSS.viewmore} onClick={handleRedirect}>View more info</small>
+                                <small className={NotificationBellCSS.viewmore} onClick={handleRedirect}>{t('home.notificationBell.moreInfo')}</small>
                             </Popover.Body>
-                        ))}{notSeenNotifications.length === 0 && <Popover.Body>No new notifications</Popover.Body>}
+                        ))}{notSeenNotifications.length === 0 && <Popover.Body>{t('home.notificationBell.noNotifications')}</Popover.Body>}
                     </Popover>
                 }
             >
