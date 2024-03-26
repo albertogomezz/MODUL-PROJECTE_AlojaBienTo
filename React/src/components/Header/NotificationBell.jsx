@@ -56,7 +56,7 @@ const NotificationBell = () => {
                         <Popover.Header as="h3">{t('home.notificationBell.title')}<span className={NotificationBellCSS.count2}>{countNotSeenNotifications}</span></Popover.Header>
                         {notSeenNotifications.length > 0 && notSeenNotifications.map((notification, index) => (
                             <Popover.Body key={index} className={NotificationBellCSS.notification_body}>
-                                <strong>{notification.desc}</strong>
+                                <strong>{t(notification.desc)}</strong>
                                 <br />
                                 <OverlayTrigger key={'left'} placement={'left'}
                                     overlay={

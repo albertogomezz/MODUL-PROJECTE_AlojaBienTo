@@ -49,6 +49,7 @@ function ExampleModal({ show, handleClose, id_apartment }) {
                     <Form.Group controlId="exampleForm.ControlSelect1">
                         <Form.Label>{t('modals.incidence.type')}</Form.Label>
                         <Form.Control as="select" onChange={handleSelectChange}>
+                            <option disabled selected value="">Selecciona una opción</option>
                             <option value="Bathroom">{t('modals.incidence.optionBath')}</option>
                             <option value="Kitchen">{t('modals.incidence.optionKitchen')}</option>
                             <option value="Keys">{t('modals.incidence.optionKeys')}</option>

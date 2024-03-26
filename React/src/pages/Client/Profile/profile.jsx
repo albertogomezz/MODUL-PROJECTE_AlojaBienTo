@@ -144,7 +144,7 @@ export default function Profile() {
                         {type_list === 1 && seenNotifications.map((notification, index) => (
                             <div key={index} className={ProfileCSS.card}>
                                 <div className={ProfileCSS.cardinfo}>
-                                    <h4>{notification.desc}</h4>
+                                    <h4>{t(notification.desc)}</h4>
                                         {notification.desc.includes("resolved") ? (
                                             <div style={{ marginLeft: '20px' , marginTop: '20px' }}>
                                                 <FontAwesomeIcon icon={faThumbsUp} size="4x" />
@@ -169,7 +169,7 @@ export default function Profile() {
                         {type_list === 2 && notSeenNotifications.map((notification, index) => (
                             <div key={index} className={ProfileCSS.card}>
                                 <div className={ProfileCSS.cardinfo}>
-                                    <h4>{notification.desc}</h4>
+                                    <h4>{t(notification.desc)}</h4>
                                         {notification.desc.includes("resolved") ? (
                                             <div style={{ marginLeft: '20px' , marginTop: '20px' }}>
                                                 <FontAwesomeIcon icon={faThumbsUp} size="4x" />

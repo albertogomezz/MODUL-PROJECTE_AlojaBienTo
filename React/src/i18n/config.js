@@ -115,7 +115,7 @@ export const i18nConf = {
                     "incidenceButton": "Incidence",
                     "cancelButton": "Cancel",
                     "deleteButton": "Delete",
-                    "markAsSeenButton": "Mark as Seen"
+                    "markAsSeenButton": "Mark as Seen",
                 },
                 "footer": {
                     "titles": {
@@ -135,7 +135,17 @@ export const i18nConf = {
                         "contactUs": "Contact Us",
                         "openTicket": "Open Ticket",
                     }
-                }
+                },
+                ////////////////////////////////////////////////////////////////////////////////////////////////
+                "Your incidence of Heating is resolved": "Your incidence of Heating, is resolved",
+                "Your incidence of Kitchen is resolved": "Your incidence of Kitchen, is resolved",
+                "Your incidence of Keys is resolved": "Your incidence of Keys, is resolved",
+                "Your incidence of Bathroom is resolved": "Your incidence of Bathroom, is resolved",
+                ///////////////////////////////////////////////////////////////////////////////////////////////
+                "Your incidence of Heating is in progress": "Your incidence of Kitchen, is in progress",
+                "Your incidence of Kitchen is in progress": "Your incidence of Kitchen, is in progress",
+                "Your incidence of Keys is in progress": "Your incidence of Kitchen, is in progress",
+                "Your incidence of Bathroom is in progress": "Your incidence of Bathroom, is in progress"
             }
         },
         es: {
@@ -253,7 +263,7 @@ export const i18nConf = {
                     "incidenceButton": "Incidencia",
                     "cancelButton": "Cancelar",
                     "deleteButton": "Eliminar",
-                    "markAsSeenButton": "Marcar como Vista"
+                    "markAsSeenButton": "Marcar como Vista",
                 },
                 "footer": {
                     "titles": {
@@ -273,7 +283,16 @@ export const i18nConf = {
                         "contactUs": "Contáctenos",
                         "openTicket": "Abrir Ticket"
                     }
-                }
+                },
+                "Your incidence of Heating is resolved": "Tu incidencia sobre la calefacción ha sido resuelta",
+                "Your incidence of Kitchen is resolved": "Tu incidencia sobre la cocina ha sido resuelta",
+                "Your incidence of Keys is resolved": "Tu incidencia sobre las llaves ha sido resuelta",
+                "Your incidence of Bathroom is resolved": "Tu incidencia del baño ha sido resuelta",
+                ///////////////////////////////////////////////////////////////////////////////////////////////
+                "Your incidence of Heating is in progress": "Tu incidencia sobre la calefacción está en progreso",
+                "Your incidence of Kitchen is in progress": "Tu incidencia sobre la cocina está en progreso",
+                "Your incidence of Keys is in progress": "Tu incidencia sobre las llaves está en progreso",
+                "Your incidence of Bathroom is in progress": "Tu incidencia del baño está en progreso"
             }
         },
         fr: {
@@ -411,7 +430,16 @@ export const i18nConf = {
                         "contactUs": "Contactez-nous",
                         "openTicket": "Ouvrir un Ticket"
                     }
-                }
+                },
+                "Your incidence of Heating is resolved": "Votre incident de chauffage est résolu",
+                "Your incidence of Kitchen is resolved": "Votre incident de cuisine est résolu",
+                "Your incidence of Keys is resolved": "Votre incident de clés est résolu",
+                "Your incidence of Bathroom is resolved": "Votre incident de salle de bain est résolu",
+                ///////////////////////////////////////////////////////////////////////////////////////////////
+                "Your incidence of Heating is in progress": "Votre incident de chauffage est en cours",
+                "Your incidence of Kitchen is in progress": "Votre incident de cuisine est en cours",
+                "Your incidence of Keys is in progress": "Votre incident de clés est en cours",
+                "Your incidence of Bathroom is in progress": "Votre incident de salle de bain est en cours"                
             }            
         },
     },
