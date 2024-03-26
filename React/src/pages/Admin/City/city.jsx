@@ -32,7 +32,6 @@ export default function city() {
 
     return (
     <div style={{paddingTop: '80px', marginLeft: '20px', marginRight: '20px'}}>
-            <h1>List Cities</h1>
         <Button variant="success" onClick={handleShow}>
             Create
         </Button>

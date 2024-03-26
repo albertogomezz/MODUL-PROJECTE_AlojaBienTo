@@ -34,7 +34,6 @@ export default function admin_apartment() {
 
     return (
         <div style={{ marginLeft: '20px', marginRight: '20px', marginTop: '80px' }}>
-            <h1>List Aparments</h1>
             <Button variant="success" onClick={handleShow}>
             Create
             </Button>

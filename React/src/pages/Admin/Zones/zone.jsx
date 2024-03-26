@@ -25,7 +25,6 @@ export default function zones() {
 
     return (
     <div className={ZoneModuleCSS.main}>
-        <h1>List Zones</h1>
         <Button style={{marginBottom: '10px'}} variant="success" onClick={handleShow}>
             Create
         </Button>
