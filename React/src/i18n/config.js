@@ -208,8 +208,8 @@ export const i18nConf = {
                     "logout": "Sesión cerrada correctamente",
                     "sendForm": "Tu mensaje ha sido enviado",
                     "sendFormApartment": "Tu mensaje ha sido enviado",
-                    "reserve": "Necesitas estar logeado",
-                    "askInfo": "Necesitas estar logeado",
+                    "reserve": "Necesitas iniciar sesión",
+                    "askInfo": "Necesitas iniciar sesión",
                     "reserveSucces": {
                         "text1": "Reserva exitosa, desde",
                         "text2": "hasta"
