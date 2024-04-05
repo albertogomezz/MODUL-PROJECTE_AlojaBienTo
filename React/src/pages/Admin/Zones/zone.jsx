@@ -2,7 +2,7 @@ import React from 'react'
 import ListZones from '../../../components/Admin/Zones/ListZones'
 import { useNavigate, useParams } from "react-router-dom";
 import { useContext, useCallback, useEffect, useState } from "react";
-import ZoneModuleCSS from './Zone.module.css';
+import ZoneModuleCSS from './zone.module.css';
 import Button from 'react-bootstrap/Button';
 import Form from 'react-bootstrap/Form';
 import Modal from 'react-bootstrap/Modal';

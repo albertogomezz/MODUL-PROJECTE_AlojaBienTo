@@ -1,0 +1,43 @@
+version: '3'
+
+services:
+
+  postgres:
+    image: postgres:latest
+    container_name: postgres_container
+    volumes:
+      - ./Postgresql/init.dump:/docker-entrypoint-initdb.d/init.sql
+    restart: always
+    environment:
+      - POSTGRES_USER=${POSTGRES_USER}
+      - POSTGRES_PASSWORD=${POSTGRES_PASSWORD}
+      - POSTGRES_DB=${POSTGRES_DB}
+    networks:
+      - practica_net
+
+  backend: 
+    build:
+      context: ./Django
+      dockerfile: Dockerfile.django
+    container_name: backend_container
+    ports:
+      - 8888:8888
+    depends_on:
+      - postgres
+    restart: unless-stopped
+    networks:
+      - practica_net
+
+  frontend:
+    build:
+      context: ./React
+      dockerfile: Dockerfile.react
+    container_name: frontend_container
+    ports:
+      - "5173:5173"
+    depends_on:
+      - backend
+    command: npm run dev
+
+networks:
+  practica_net:

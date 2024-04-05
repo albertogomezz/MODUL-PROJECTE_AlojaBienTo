@@ -18,7 +18,7 @@ SECRET_KEY = 'django-insecure-+q2g0&*d9&lirtlk320^a+i!4#m3z8bp#(t$6#(+r3f==ix%af
 
 DEBUG = True
 
-ALLOWED_HOSTS = ['0.0.0.0', 'localhost', '127.0.0.1' ]
+ALLOWED_HOSTS = ['*']
 
 INSTALLED_APPS = [
     'django.contrib.admin',
@@ -73,7 +73,7 @@ DATABASES = {
         'NAME': 'rent_agency', 
         'USER': 'postgres',
         'PASSWORD': '12345',
-        'HOST': '127.0.0.1', 
+        'HOST': 'postgres', 
         'PORT': '5432',
     }
 }
@@ -105,8 +105,12 @@ STATIC_URL = 'static/'
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
+CORS_ALLOWED_ALL_ORIGINS = True
+
 CORS_ALLOWED_ORIGINS = [
     "http://localhost:5173",
+    "http://localhost",
+    "http://localhost:80",
 ]
 
 AUTH_USER_MODEL = 'users.User'

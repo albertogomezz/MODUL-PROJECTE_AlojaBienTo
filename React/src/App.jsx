@@ -5,10 +5,6 @@ import i18n from "i18next";
 import { initReactI18next } from "react-i18next";
 import { i18nConf } from './i18n/config.js'
 
-i18n
-  .use(initReactI18next)
-  .init(i18nConf);
-  
 export function App() {
   return (
     <>
