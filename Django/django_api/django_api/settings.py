@@ -73,7 +73,7 @@ DATABASES = {
         'NAME': 'rent_agency', 
         'USER': 'postgres',
         'PASSWORD': '12345',
-        'HOST': '127.0.0.1', 
+        'HOST': 'postgres', 
         'PORT': '5432',
     }
 }
