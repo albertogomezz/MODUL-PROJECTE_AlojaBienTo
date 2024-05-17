@@ -73,3 +73,19 @@ This project is about a web application designed to facilitate the booking of ap
 - **Database**: PostgreSQL has been used as the database to store system information.
 - **Additional Libraries**: Libraries like SweetAlert and i18n have been used to enhance user experience and internationalization of the application.
 
+
+## Deployment
+
+To deploy the project on your local machine, follow these steps:
+
+Clone the repository: <br>
+`git clone https://github.com/albertogomezz/MODUL-PROJECTE_AlojaBienTo`
+
+Change to the project directory: <br>
+`cd MODUL-PROJECTE_AlojaBienTo`
+
+Switch to the docker-branch: <br>
+`git checkout docker-branch`
+
+Start the project with Docker Compose: <br>
+`docker-compose up`
