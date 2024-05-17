@@ -31,25 +31,21 @@ Este proyecto trata sobre una aplicación web diseñada para facilitar la reserv
 - **Librerías Adicionales**: Se han utilizado bibliotecas como SweetAlert y i18n para mejorar la experiencia del usuario y la internacionalización de la aplicación.
 
 
+## Despliegue
+
 Para desplegar el proyecto en tu máquina local, sigue estos pasos:
 
-1. Clonar el repositorio:
-git clone https://github.com/albertogomezz/MODUL-PROJECTE_AlojaBienTo
+1. Clonar el repositorio: <br>
+`git clone https://github.com/albertogomezz/MODUL-PROJECTE_AlojaBienTo`
 
-css
-Copiar código
-2. Cambiar al directorio del proyecto:
-cd MODUL-PROJECTE_AlojaBienTo
+2. Cambiar al directorio del proyecto: <br>
+`cd MODUL-PROJECTE_AlojaBienTo`
 
-markdown
-Copiar código
-3. Cambiarse a la rama `docker-branch`:
+3. Cambiarse a la rama `docker-branch`: <br>
 git checkout docker-branch
 
-markdown
-Copiar código
-4. Arrancar el proyecto con Docker Compose:
-docker-compose up
+4. Arrancar el proyecto con Docker Compose: <br>
+`docker-compose up`
 
 
 ---
